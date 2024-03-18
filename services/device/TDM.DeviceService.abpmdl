@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "TDM.DeviceService.Domain.Shared": {
+      "path": "src/TDM.DeviceService.Domain.Shared/TDM.DeviceService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "TDM.DeviceService.Domain": {
+      "path": "src/TDM.DeviceService.Domain/TDM.DeviceService.Domain.abppkg",
+      "folder": "src"
+    },
+    "TDM.DeviceService.Application.Contracts": {
+      "path": "src/TDM.DeviceService.Application.Contracts/TDM.DeviceService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "TDM.DeviceService.Application": {
+      "path": "src/TDM.DeviceService.Application/TDM.DeviceService.Application.abppkg",
+      "folder": "src"
+    },
+    "TDM.DeviceService.EntityFrameworkCore": {
+      "path": "src/TDM.DeviceService.EntityFrameworkCore/TDM.DeviceService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "TDM.DeviceService.MongoDB": {
+      "path": "src/TDM.DeviceService.MongoDB/TDM.DeviceService.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "TDM.DeviceService.HttpApi": {
+      "path": "src/TDM.DeviceService.HttpApi/TDM.DeviceService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "TDM.DeviceService.HttpApi.Client": {
+      "path": "src/TDM.DeviceService.HttpApi.Client/TDM.DeviceService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "TDM.DeviceService.TestBase": {
+      "path": "test/TDM.DeviceService.TestBase/TDM.DeviceService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "TDM.DeviceService.EntityFrameworkCore.Tests": {
+      "path": "test/TDM.DeviceService.EntityFrameworkCore.Tests/TDM.DeviceService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.DeviceService.MongoDB.Tests": {
+      "path": "test/TDM.DeviceService.MongoDB.Tests/TDM.DeviceService.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.DeviceService.Domain.Tests": {
+      "path": "test/TDM.DeviceService.Domain.Tests/TDM.DeviceService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.DeviceService.Application.Tests": {
+      "path": "test/TDM.DeviceService.Application.Tests/TDM.DeviceService.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.DeviceService.HttpApi.Host": {
+      "path": "host/TDM.DeviceService.HttpApi.Host/TDM.DeviceService.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "TDM.DeviceService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/TDM.DeviceService.HttpApi.Client.ConsoleTestApp/TDM.DeviceService.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "TDM.DeviceService.AuthServer": {
+      "path": "host/TDM.DeviceService.AuthServer/TDM.DeviceService.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "TDM.DeviceService.Host.Shared": {
+      "path": "host/TDM.DeviceService.Host.Shared/TDM.DeviceService.Host.Shared.abppkg",
+      "folder": "host"
+    }
+  }
+}

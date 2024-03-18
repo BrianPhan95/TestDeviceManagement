@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TDM.DeviceService</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <UserSecretsId>TDM.DeviceService-c2d31439-b723-48e2-b061-5ebd7aeb6010</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\shared\TDM.Microservice.Shared\TDM.Microservice.Shared.csproj" />
+    <ProjectReference Include="..\..\src\TDM.DeviceService.HttpApi\TDM.DeviceService.HttpApi.csproj" />
+    <ProjectReference Include="..\..\src\TDM.DeviceService.Application\TDM.DeviceService.Application.csproj" />
+    <ProjectReference Include="..\..\src\TDM.DeviceService.EntityFrameworkCore\TDM.DeviceService.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+  </ItemGroup>
+
+</Project>

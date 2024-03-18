@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "TDM.SaaSService": {
+      "path": "TDM.SaaSService.abpmdl"
+    }
+  }
+}

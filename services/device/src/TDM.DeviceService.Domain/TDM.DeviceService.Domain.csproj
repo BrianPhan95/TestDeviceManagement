@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TDM.DeviceService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="8.0.5" />
+    <ProjectReference Include="..\TDM.DeviceService.Domain.Shared\TDM.DeviceService.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

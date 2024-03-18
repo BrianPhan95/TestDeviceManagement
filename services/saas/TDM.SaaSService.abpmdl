@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "TDM.SaaSService.Domain.Shared": {
+      "path": "src/TDM.SaaSService.Domain.Shared/TDM.SaaSService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "TDM.SaaSService.Domain": {
+      "path": "src/TDM.SaaSService.Domain/TDM.SaaSService.Domain.abppkg",
+      "folder": "src"
+    },
+    "TDM.SaaSService.Application.Contracts": {
+      "path": "src/TDM.SaaSService.Application.Contracts/TDM.SaaSService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "TDM.SaaSService.Application": {
+      "path": "src/TDM.SaaSService.Application/TDM.SaaSService.Application.abppkg",
+      "folder": "src"
+    },
+    "TDM.SaaSService.EntityFrameworkCore": {
+      "path": "src/TDM.SaaSService.EntityFrameworkCore/TDM.SaaSService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "TDM.SaaSService.MongoDB": {
+      "path": "src/TDM.SaaSService.MongoDB/TDM.SaaSService.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "TDM.SaaSService.HttpApi": {
+      "path": "src/TDM.SaaSService.HttpApi/TDM.SaaSService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "TDM.SaaSService.HttpApi.Client": {
+      "path": "src/TDM.SaaSService.HttpApi.Client/TDM.SaaSService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "TDM.SaaSService.TestBase": {
+      "path": "test/TDM.SaaSService.TestBase/TDM.SaaSService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "TDM.SaaSService.EntityFrameworkCore.Tests": {
+      "path": "test/TDM.SaaSService.EntityFrameworkCore.Tests/TDM.SaaSService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.SaaSService.MongoDB.Tests": {
+      "path": "test/TDM.SaaSService.MongoDB.Tests/TDM.SaaSService.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.SaaSService.Domain.Tests": {
+      "path": "test/TDM.SaaSService.Domain.Tests/TDM.SaaSService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.SaaSService.Application.Tests": {
+      "path": "test/TDM.SaaSService.Application.Tests/TDM.SaaSService.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.SaaSService.HttpApi.Host": {
+      "path": "host/TDM.SaaSService.HttpApi.Host/TDM.SaaSService.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "TDM.SaaSService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/TDM.SaaSService.HttpApi.Client.ConsoleTestApp/TDM.SaaSService.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "TDM.SaaSService.AuthServer": {
+      "path": "host/TDM.SaaSService.AuthServer/TDM.SaaSService.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "TDM.SaaSService.Host.Shared": {
+      "path": "host/TDM.SaaSService.Host.Shared/TDM.SaaSService.Host.Shared.abppkg",
+      "folder": "host"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "TDM.DeviceService": {
+      "path": "TDM.DeviceService.abpmdl"
+    }
+  }
+}

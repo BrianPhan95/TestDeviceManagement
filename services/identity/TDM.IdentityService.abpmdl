@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "TDM.IdentityService.Domain.Shared": {
+      "path": "src/TDM.IdentityService.Domain.Shared/TDM.IdentityService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "TDM.IdentityService.Domain": {
+      "path": "src/TDM.IdentityService.Domain/TDM.IdentityService.Domain.abppkg",
+      "folder": "src"
+    },
+    "TDM.IdentityService.Application.Contracts": {
+      "path": "src/TDM.IdentityService.Application.Contracts/TDM.IdentityService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "TDM.IdentityService.Application": {
+      "path": "src/TDM.IdentityService.Application/TDM.IdentityService.Application.abppkg",
+      "folder": "src"
+    },
+    "TDM.IdentityService.EntityFrameworkCore": {
+      "path": "src/TDM.IdentityService.EntityFrameworkCore/TDM.IdentityService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "TDM.IdentityService.MongoDB": {
+      "path": "src/TDM.IdentityService.MongoDB/TDM.IdentityService.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "TDM.IdentityService.HttpApi": {
+      "path": "src/TDM.IdentityService.HttpApi/TDM.IdentityService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "TDM.IdentityService.HttpApi.Client": {
+      "path": "src/TDM.IdentityService.HttpApi.Client/TDM.IdentityService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "TDM.IdentityService.TestBase": {
+      "path": "test/TDM.IdentityService.TestBase/TDM.IdentityService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "TDM.IdentityService.EntityFrameworkCore.Tests": {
+      "path": "test/TDM.IdentityService.EntityFrameworkCore.Tests/TDM.IdentityService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.IdentityService.MongoDB.Tests": {
+      "path": "test/TDM.IdentityService.MongoDB.Tests/TDM.IdentityService.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.IdentityService.Domain.Tests": {
+      "path": "test/TDM.IdentityService.Domain.Tests/TDM.IdentityService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.IdentityService.Application.Tests": {
+      "path": "test/TDM.IdentityService.Application.Tests/TDM.IdentityService.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.IdentityService.HttpApi.Host": {
+      "path": "host/TDM.IdentityService.HttpApi.Host/TDM.IdentityService.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "TDM.IdentityService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/TDM.IdentityService.HttpApi.Client.ConsoleTestApp/TDM.IdentityService.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "TDM.IdentityService.AuthServer": {
+      "path": "host/TDM.IdentityService.AuthServer/TDM.IdentityService.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "TDM.IdentityService.Host.Shared": {
+      "path": "host/TDM.IdentityService.Host.Shared/TDM.IdentityService.Host.Shared.abppkg",
+      "folder": "host"
+    }
+  }
+}

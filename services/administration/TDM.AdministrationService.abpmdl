@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "TDM.AdministrationService.Domain.Shared": {
+      "path": "src/TDM.AdministrationService.Domain.Shared/TDM.AdministrationService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "TDM.AdministrationService.Domain": {
+      "path": "src/TDM.AdministrationService.Domain/TDM.AdministrationService.Domain.abppkg",
+      "folder": "src"
+    },
+    "TDM.AdministrationService.Application.Contracts": {
+      "path": "src/TDM.AdministrationService.Application.Contracts/TDM.AdministrationService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "TDM.AdministrationService.Application": {
+      "path": "src/TDM.AdministrationService.Application/TDM.AdministrationService.Application.abppkg",
+      "folder": "src"
+    },
+    "TDM.AdministrationService.EntityFrameworkCore": {
+      "path": "src/TDM.AdministrationService.EntityFrameworkCore/TDM.AdministrationService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "TDM.AdministrationService.MongoDB": {
+      "path": "src/TDM.AdministrationService.MongoDB/TDM.AdministrationService.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "TDM.AdministrationService.HttpApi": {
+      "path": "src/TDM.AdministrationService.HttpApi/TDM.AdministrationService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "TDM.AdministrationService.HttpApi.Client": {
+      "path": "src/TDM.AdministrationService.HttpApi.Client/TDM.AdministrationService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "TDM.AdministrationService.TestBase": {
+      "path": "test/TDM.AdministrationService.TestBase/TDM.AdministrationService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "TDM.AdministrationService.EntityFrameworkCore.Tests": {
+      "path": "test/TDM.AdministrationService.EntityFrameworkCore.Tests/TDM.AdministrationService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.AdministrationService.MongoDB.Tests": {
+      "path": "test/TDM.AdministrationService.MongoDB.Tests/TDM.AdministrationService.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.AdministrationService.Domain.Tests": {
+      "path": "test/TDM.AdministrationService.Domain.Tests/TDM.AdministrationService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.AdministrationService.Application.Tests": {
+      "path": "test/TDM.AdministrationService.Application.Tests/TDM.AdministrationService.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "TDM.AdministrationService.HttpApi.Host": {
+      "path": "host/TDM.AdministrationService.HttpApi.Host/TDM.AdministrationService.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "TDM.AdministrationService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/TDM.AdministrationService.HttpApi.Client.ConsoleTestApp/TDM.AdministrationService.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "TDM.AdministrationService.AuthServer": {
+      "path": "host/TDM.AdministrationService.AuthServer/TDM.AdministrationService.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "TDM.AdministrationService.Host.Shared": {
+      "path": "host/TDM.AdministrationService.Host.Shared/TDM.AdministrationService.Host.Shared.abppkg",
+      "folder": "host"
+    }
+  }
+}

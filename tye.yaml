@@ -1,0 +1,38 @@
+name: tdm
+services:
+# - name: tdm-authenticateserver
+#   project: apps/TDM.AuthServer/TDM.AuthServer.csproj
+#   bindings:
+#     - protocol: https
+#       port: 7000
+- name: tdm-auth-server
+  project: apps/TDM.AuthServer/TDM.AuthServer.csproj
+  bindings:
+    - protocol: https
+      port: 7000
+
+- name: tdm-gateway
+  project: gateway/TDM.Gateway/TDM.Gateway.csproj
+  bindings:
+    - protocol: https
+      port: 7500
+- name: tdm-administrationservice-httpapi-host
+  project: services/administration/host/TDM.AdministrationService.HttpApi.Host/TDM.AdministrationService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 7001
+- name: tdm-identityservice-httpapi-host
+  project: services/identity/host/TDM.IdentityService.HttpApi.Host/TDM.IdentityService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 7002
+- name: tdm-saasservice-httpapi-host
+  project: services/saas/host/TDM.SaaSService.HttpApi.Host/TDM.SaaSService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 7003
+- name: tdm-deviceservice-httpapi-host
+  project: services/device/host/TDM.DeviceService.HttpApi.Host/TDM.DeviceService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 7004

@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\services\administration\src\TDM.AdministrationService.EntityFrameworkCore\TDM.AdministrationService.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\TDM.Shared.Hosting\TDM.Shared.Hosting.csproj" />
+	</ItemGroup>
+</Project>

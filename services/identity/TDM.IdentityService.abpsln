@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "TDM.IdentityService": {
+      "path": "TDM.IdentityService.abpmdl"
+    }
+  }
+}
