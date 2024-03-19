@@ -45,14 +45,14 @@ namespace TDM.DeviceService.Domain.Application
     [Authorize(DeviceServicePermissions.Device.Default)]
     public class DeviceAppService :
      CrudAppService<
-         Device, //The Book entity
-         DeviceDto, //Used to show books
-         Guid, //Primary key of the book entity
-         PagedAndSortedResultRequestDto, //Used for paging/sorting
-         CreateUpdateDeviceDto>, //Used to create/update a book
-     IDeviceAppService //implement the IBookAppService
+         Models.Device,
+         DeviceDto,
+         Guid, 
+         PagedAndSortedResultRequestDto, 
+         CreateUpdateDeviceDto>, 
+     IDeviceAppService 
     {
-        public DeviceAppService(IRepository<Device, Guid> repository)
+        public DeviceAppService(IRepository<Models.Device, Guid> repository)
             : base(repository)
         {
 

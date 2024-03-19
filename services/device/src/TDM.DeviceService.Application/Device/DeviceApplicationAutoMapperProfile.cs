@@ -12,8 +12,12 @@ namespace TDM.DeviceService.Device
     {
         public DeviceApplicationAutoMapperProfile()
         {
-            CreateMap<CreateUpdateDeviceDto, Domain.Device>().Ignore(x => x.TenantId).Ignore(x => x.ExtraProperties).Ignore(x => x.ConcurrencyStamp).Ignore(x => x.Id); ;
-            CreateMap<Domain.Device, DeviceDto>();
+            CreateMap<CreateUpdateDeviceDto, Models.Device>()
+                .Ignore(x => x.ExtraProperties)
+                .Ignore(x => x.ConcurrencyStamp).Ignore(x => x.Id)
+                .Ignore(x => x.DeviceBookings);
+
+            CreateMap<Models.Device, DeviceDto>();
         }
     }
 }

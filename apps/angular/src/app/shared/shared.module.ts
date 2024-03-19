@@ -3,9 +3,11 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
+import { DeviceTypePipe } from './pipes/device-type.pipe';
+import { DeviceStatusPipe } from './pipes/device-status.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [DeviceTypePipe, DeviceStatusPipe],
   imports: [
     CoreModule,
     ThemeSharedModule,
@@ -16,7 +18,9 @@ import { NgxValidateCoreModule } from '@ngx-validate/core';
     CoreModule,
     ThemeSharedModule,
     NgbDropdownModule,
-    NgxValidateCoreModule
+    NgxValidateCoreModule,
+    DeviceTypePipe,
+    DeviceStatusPipe
   ],
   providers: []
 })

@@ -1,4 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using TDM.DeviceService.Models;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
@@ -32,13 +35,28 @@ public static class DeviceServiceDbContextModelCreatingExtensions
         */
 
 
-        builder.Entity<Domain.Device>(b =>
+        builder.Entity<Device>(b =>
         {
             //Configure table & schema name
             b.ToTable(DeviceServiceDbProperties.DbTablePrefix + "Devices", DeviceServiceDbProperties.DbSchema);
 
             b.ConfigureByConvention();
+
+            //Relations
+            b.HasMany(device => device.DeviceBookings)
+            .WithOne(booking => booking.Device)
+            .HasForeignKey(qt => qt.DeviceId);
         });
 
+
+        builder.Entity<DeviceBooking>(b =>
+        {
+            //Configure table & schema name
+            b.ToTable(DeviceServiceDbProperties.DbTablePrefix + "DeviceBookings", DeviceServiceDbProperties.DbSchema);
+
+            b.ConfigureByConvention();
+
+            b.HasOne<Device>(booking => booking.Device).WithMany(device => device.DeviceBookings).HasForeignKey(e => e.DeviceId);
+        });
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TDM.DeviceService.Models;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -16,7 +17,8 @@ public class DeviceServiceDbContext : AbpDbContext<DeviceServiceDbContext>, IDev
     {
 
     }
-    public DbSet<Domain.Device> Devices { get; set; }
+    public DbSet<Device> Devices { get; set; }
+    public DbSet<DeviceBooking> DeviceBookings {  get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

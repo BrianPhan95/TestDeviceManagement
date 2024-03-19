@@ -21,7 +21,7 @@ function configureRoutes(routesService: RoutesService) {
         iconClass: 'fas fa-mobile',
         order: 2,
         layout: eLayoutType.application,
-        requiredPolicy: 'DeviceService.Project',
+        requiredPolicy: 'DeviceService.Device',
       },
       // {
       //   path: '/devices',

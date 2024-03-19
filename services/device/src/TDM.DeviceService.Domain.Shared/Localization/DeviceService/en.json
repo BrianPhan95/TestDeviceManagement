@@ -1,7 +1,12 @@
 {
   "culture": "en",
   "texts": {
-    "MyAccount":  "My account",
+    "MyAccount": "My account",
     "SamplePageMessage": "A sample page for the DeviceService module"
-  }
+  },
+  "Permission:Devices": "Device Management",
+  "Permission:Devices.Create": "Creating new devices",
+  "Permission:Devices.Update": "Editing the devices",
+  "Permission:Devices.Delete": "Deleting the devices",
+  "Menu:Devices": "Device List"
 }
