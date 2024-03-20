@@ -20,8 +20,6 @@ export class DeviceComponent implements OnInit {
   form: FormGroup;
 
   selectedDevice = {} as DeviceDto;
-  canCheckout = false;
-  canApproveReturn = false;
 
   constructor(public readonly list: ListService,
     private deviceService: DeviceService,
@@ -36,8 +34,6 @@ export class DeviceComponent implements OnInit {
       this.devices = response;
     });
 
-    this.canCheckout = this.permissionService.getGrantedPolicy('DeviceService.Device.Checkout');
-    this.canApproveReturn = this.permissionService.getGrantedPolicy('DeviceService.Device.Return');
   }
 
   createDevice() {
@@ -90,18 +86,6 @@ export class DeviceComponent implements OnInit {
           this.deviceService.delete(id).subscribe(() => this.list.get());
         }
       });
-  }
-
-  allowCheckOut(status: DeviceStatus) {
-    console.log(this.canCheckout);
-    console.log(this.canCheckout);
-
-    console.log(status === DeviceStatus.Available)
-
-    return status === DeviceStatus.Available && this.canCheckout;
-  }
-  canReturn(status: DeviceStatus) {
-    return status === DeviceStatus.Unavailable && this.canApproveReturn;
   }
 
   checkout(id: string) {

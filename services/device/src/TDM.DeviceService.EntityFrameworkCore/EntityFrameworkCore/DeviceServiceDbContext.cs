@@ -19,6 +19,7 @@ public class DeviceServiceDbContext : AbpDbContext<DeviceServiceDbContext>, IDev
     }
     public DbSet<Device> Devices { get; set; }
     public DbSet<DeviceBooking> DeviceBookings {  get; set; }
+    public DbSet<UserBooking> UserBookings {  get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

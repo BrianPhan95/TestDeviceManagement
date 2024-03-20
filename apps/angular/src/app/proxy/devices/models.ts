@@ -6,6 +6,7 @@ export interface DeviceDto {
   name?: string;
   deviceType: DeviceType;
   deviceStatus: DeviceStatus;
+  bookingBy: string;
 }
 
 export interface CreateUpdateDeviceDto {

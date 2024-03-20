@@ -21,6 +21,9 @@ namespace TDM.DeviceService.Models
         [ForeignKey("DeviceId")]
         public Device Device { get; set; }
 
+        [ForeignKey("UserId")]
+        public UserBooking User { get; set; }
+
         public DeviceBooking()
         {
             

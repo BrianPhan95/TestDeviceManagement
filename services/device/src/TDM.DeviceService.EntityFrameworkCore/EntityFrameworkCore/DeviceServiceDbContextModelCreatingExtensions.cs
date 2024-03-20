@@ -57,6 +57,21 @@ public static class DeviceServiceDbContextModelCreatingExtensions
             b.ConfigureByConvention();
 
             b.HasOne<Device>(booking => booking.Device).WithMany(device => device.DeviceBookings).HasForeignKey(e => e.DeviceId);
+            b.HasOne<UserBooking>(booking => booking.User).WithMany(user => user.DeviceBookings).HasForeignKey(e => e.UserId);
+
+        });
+
+        builder.Entity<UserBooking>(b =>
+        {
+            //Configure table & schema name
+            b.ToTable(DeviceServiceDbProperties.DbTablePrefix + "UserBookings", DeviceServiceDbProperties.DbSchema);
+
+            b.ConfigureByConvention();
+
+            //Relations
+            b.HasMany(user => user.DeviceBookings)
+            .WithOne(booking => booking.User)
+            .HasForeignKey(qt => qt.UserId);
         });
     }
 }

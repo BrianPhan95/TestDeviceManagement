@@ -17,7 +17,7 @@ namespace TDM.DeviceService.Device
                 .Ignore(x => x.ConcurrencyStamp).Ignore(x => x.Id)
                 .Ignore(x => x.DeviceBookings);
 
-            CreateMap<Models.Device, DeviceDto>();
+            CreateMap<Models.Device, DeviceDto>().Ignore(x => x.BookingBy);
         }
     }
 }

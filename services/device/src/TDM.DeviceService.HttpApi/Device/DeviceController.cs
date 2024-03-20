@@ -82,35 +82,7 @@ namespace TDM.DeviceServices
         [Route("checkout/{deviceId}")]
         public async Task CheckOutAsync(Guid deviceId)
         {
-            var device = await _deviceService.GetAsync(deviceId);
-            if (device == null)
-            {
-                return;
-            }
-
-            await _deviceService.UpdateAsync(deviceId, new CreateUpdateDeviceDto()
-            {
-                Name = device.Name,
-                DeviceType = device.DeviceType,
-                DeviceStatus = DeviceService.Devices.DeviceStatus.Unavailable,
-            });
-
-            var booking = new CreateUpdateDeviceBookingDto()
-            {
-                UserId = CurrentUser.Id.Value,
-                DeviceId = deviceId,
-                TimeCheckOut = DateTime.UtcNow,
-                IsActive = true,
-            };
-            await _deviceBookingService.CreateAsync(booking);
-        }
-
-        [HttpGet]
-        [Authorize(DeviceServicePermissions.Device.Return)]
-        [Route("bookings")]
-        public async Task<PagedResultDto<DeviceBookingDto>> GetBookingListAsync(PagedAndSortedResultRequestDto dto)
-        {
-            return await _deviceBookingService.GetListAsync(dto);
+            await _deviceBookingService.CheckoutDevice(deviceId);
         }
 
         [HttpPost]

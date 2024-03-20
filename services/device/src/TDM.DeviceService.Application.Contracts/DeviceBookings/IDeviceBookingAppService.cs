@@ -14,6 +14,7 @@ namespace TDM.DeviceService.DeviceBookings
        PagedAndSortedResultRequestDto,
        CreateUpdateDeviceBookingDto> 
     {
+        Task CheckoutDevice(Guid deviceId);
         Task BookingReturn(Guid deviceId);
     }
 }

@@ -11,5 +11,6 @@ namespace TDM.DeviceService
         public string Name { get; set; }
         public DeviceType DeviceType { get; set; }
         public DeviceStatus DeviceStatus { get; set; }
+        public string BookingBy {  get; set; }
     }
 }
