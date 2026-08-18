@@ -4,6 +4,76 @@ TDM is a microservices-based application for managing shared test devices (phone
 
 It is built on the [ABP Framework](https://abp.io/) and split into independently deployable services (device management, identity, administration, SaaS/tenant management) fronted by an API gateway, with an Angular single-page application as the primary client.
 
+## Features
+
+**Implemented**
+1. Login / Logout (OAuth2/OIDC via the Auth Server)
+2. Permission management (Tenant, Role, User)
+3. CRUD Users (user and sub-user)
+4. CRUD Devices
+5. Booking process (checkout / return)
+
+**Planned / Not yet implemented**
+1. Dedicated booking form
+2. Device favorites
+3. Booking history
+4. Notifications when a favorited device is booked by someone else
+
+## Architecture
+
+Infrastructure is split into two layers:
+
+- **Public Layer** — Angular Application, Authentication Server, and Web Gateway (internet/client-facing).
+- **Internal Layer** — Administration Service, Identity Service, SaaS Service, Device Management Service, plus shared infrastructure (Redis cache, RabbitMQ event bus, and future services).
+
+```mermaid
+flowchart TB
+    subgraph Public["Public Layer"]
+        Angular["Angular Application"]
+        Auth["Authentication Server\n(port 7000)"]
+        Gateway["Web Gateway\n(YARP reverse proxy)"]
+    end
+
+    subgraph Internal["Internal Layer"]
+        Admin["Administration Service\n(port 7001)"]
+        Identity["Identity Service\n(port 7002)"]
+        Saas["SaaS Service\n(port 7003)"]
+        Device["Device Service\n(port 7004)"]
+        AdminDB[(Administration DB)]
+        IdentityDB[(Identity DB)]
+        SaasDB[(SaaS DB)]
+        DeviceDB[(Device DB)]
+    end
+
+    Bus["Event Bus (RabbitMQ)"]
+
+    Angular -- token/auth --> Auth
+    Angular --> Gateway
+    Gateway -- auth --> Auth
+    Gateway --> Admin
+    Gateway --> Identity
+    Gateway --> Saas
+    Gateway --> Device
+    Auth -. authz .-> Admin
+    Auth -. authz .-> Identity
+    Auth -. authz .-> Saas
+    Auth -. authz .-> Device
+
+    Admin --> AdminDB
+    Identity --> IdentityDB
+    Saas --> SaasDB
+    Device --> DeviceDB
+
+    Admin --- Bus
+    Identity --- Bus
+    Saas --- Bus
+    Device --- Bus
+```
+
+Full diagram source: [Google Drive — Test Device Management Diagram](https://drive.google.com/file/d/1xtUZTwB8d33LnMU1tF1JX5ZrtR1uIQB8/view?usp=sharing)
+
+Each service follows Domain-Driven Design as suggested by ABP, and all services' EF Core migrations are applied together by running the shared migration console app (`TDM.DbMigrator`); each service also has its own `Dockerfile` for containerized deployment.
+
 ## Tech Stack
 
 **Backend**
@@ -119,6 +189,8 @@ tye run
 ```
 This starts the Auth Server (`:7000`), Gateway (`:7500`), Administration Service (`:7001`), Identity Service (`:7002`), SaaS Service (`:7003`), and Device Service (`:7004`), per `tye.yaml`.
 
+> The project's design notes list the Gateway on port `7005`; the checked-in `tye.yaml` and `launchSettings.json` currently run it on `7500` — use `7500` for local development, since that reflects the actual configuration.
+
 Alternatively, run an individual service:
 ```bash
 dotnet run --project apps/TDM.AuthServer/TDM.AuthServer.csproj
@@ -196,10 +268,27 @@ Each backend service also exposes a Swagger UI at its host root for interactive 
   - `BookingReturn(deviceId)` — return a checked-out device.
 - **User Booking Information** (`IUserBookingAppService`) — full CRUD for the users allowed to book devices, plus `CreateUpdateUserBooking(userId, dto)`.
 
-**Identity Service** — user/role management built on `Volo.Identity`.
+**Identity Service** (port `7002`) — manages users and roles; exposes OpenID Connect for token, scope, and permission management; publishes/consumes events via the event bus. Built on `Volo.Identity`.
 
-**Administration Service** — cross-cutting concerns shared across services: audit logging, feature management, permission management, and setting management (`Volo.Abp.AuditLogging`, `Volo.Abp.FeatureManagement`, `Volo.Abp.PermissionManagement`, `Volo.Abp.SettingManagement`).
+**Administration Service** (port `7001`) — manages features and permissions across the platform; publishes/consumes events via the event bus (`Volo.Abp.AuditLogging`, `Volo.Abp.FeatureManagement`, `Volo.Abp.PermissionManagement`, `Volo.Abp.SettingManagement`).
 
-**SaaS Service** — multi-tenant/tenant management (`Volo.Abp.TenantManagement`).
+**SaaS Service** (port `7003`) — manages tenants (multi-tenancy) and participates in the event bus (`Volo.Abp.TenantManagement`).
 
-**Auth Server** (`apps/TDM.AuthServer`) — issues OAuth2/OIDC tokens (hybrid and authorization-code flows) consumed by the gateway-routed services and the Angular client.
+**Auth Server** (`apps/TDM.AuthServer`, port `7000`) — issues OAuth2/OIDC tokens (hybrid and authorization-code flows); requires the Administration, Identity, and SaaS modules to be available.
+
+## Scaffolding New Services
+
+The repo's PowerShell scripts wrap the ABP CLI for initial setup and adding new microservices:
+
+```powershell
+# One-time: scaffold the initial solution (apps, gateway, shared, and the first services)
+./init.ps1 TDM
+
+# Add a new microservice module under services/<name>
+./newservice.ps1 ServiceName
+```
+
+## Links
+
+- Source code: https://github.com/BrianPhan95/TestDeviceManagement
+- Architecture diagram: https://drive.google.com/file/d/1xtUZTwB8d33LnMU1tF1JX5ZrtR1uIQB8/view?usp=sharing
